@@ -1,0 +1,12 @@
+        static void Main(string[] args)
+        {
+            string name = "Your name";
+            int num1 = 1;
+            int num2 = 2;  
+            Console.WriteLine(name);
+            Console.WriteLine(num1);
+            Console.WriteLine(num2);
+        }
+
+    }
+}
