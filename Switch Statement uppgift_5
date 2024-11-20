@@ -1,0 +1,34 @@
+namespace Switch_Statement
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter your grade here:");
+            String grade = Console.ReadLine();
+
+            switch (grade)
+            {
+
+                case "5":
+                    Console.WriteLine("Perfect score!");
+                    break;
+                case "4":
+                    Console.WriteLine("Very amazing grade!");
+                    break;
+                case "3":
+                    Console.WriteLine("Very good grade!");
+                    break;
+                case "2":
+                    Console.WriteLine("Decent but could have been better");
+                    break;
+                case "1":
+                    Console.WriteLine("Not really good but passed");
+                    break;
+                case "0":
+                    Console.WriteLine("Need to redo it");
+                    break;
+            }
+        }
+    }
+}
