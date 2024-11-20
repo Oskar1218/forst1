@@ -1,0 +1,27 @@
+namespace if_Statement_uppgift_4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Do you want to vote? Enter your age here: ");
+            string ageInput = Console.ReadLine();
+            int age = Convert.ToInt32(ageInput);
+
+            if (age >= 18)
+            {
+                Console.WriteLine("You are old enough to vote!");
+            }
+            else if (age <= 18)
+            {
+                Console.WriteLine("You arent old enough to vote");
+
+            }
+
+
+
+
+
+        }
+    }
+}
