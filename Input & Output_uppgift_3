@@ -1,0 +1,12 @@
+namespace Input___Output_uppgift_3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Please enter your name here: ");
+            String userName = Console.ReadLine();
+            Console.WriteLine("Thank you very much, " +  userName);
+        }
+    }
+}
