@@ -1,0 +1,33 @@
+ internal class Program
+ {
+     static void Main(string[] args)
+     {
+   
+             int intValue = 100;
+             double doubleValue = intValue;
+             Console.WriteLine(doubleValue);
+
+
+             double value = 9.99;
+             int integerValue = (int)value;
+             Console.WriteLine(integerValue);
+
+
+             string numberAsString = "123";
+             int number = int.Parse(numberAsString);
+             Console.WriteLine(number);
+
+
+             string input = "456";
+             if (int.TryParse(input, out int parsedNumber))
+             {
+                 Console.WriteLine($"Successfully parsed: {parsedNumber}");
+             }
+             else
+             {
+                 Console.WriteLine("Invalid number.");
+             }
+         }
+
+     }
+ }
