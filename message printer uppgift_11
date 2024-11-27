@@ -1,0 +1,40 @@
+namespace Message_Printer_uppgift_11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            {
+                Console.Write("Please enter the message: ");
+                string message = Console.ReadLine();  
+
+                Console.WriteLine("\nOriginal Order: ");
+                Console.WriteLine(message);  
+              
+                char[] messageArray = message.ToCharArray();  
+                Array.Reverse(messageArray);  
+
+                Console.WriteLine("\nReverse Order: ");
+                Console.WriteLine(new string(messageArray));  
+
+               
+                Console.WriteLine("\nLetter by Letter: ");
+                foreach (char c in message)
+                {
+                    Console.WriteLine(c);  
+                }
+
+                
+                Console.WriteLine("\nReversed Letter by Letter: ");
+                foreach (char c in messageArray)
+                {
+                    Console.WriteLine(c);  
+                                        
+                }
+            }
+        }
+
+    }
+}
+
