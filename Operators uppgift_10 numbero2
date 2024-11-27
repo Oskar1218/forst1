@@ -1,0 +1,35 @@
+namespace Operators_uppgift_10
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int num1 = 10, num2 = 20, num3 = 30, num4 = 40, num5 = 50, num6 = 60;
+            int sum = num1 + num2;
+            Console.WriteLine($"Sum of num1 and num2: {sum}");
+
+            int product = num3 * num4;
+            Console.WriteLine($"Product of num3 and num4: {product}");
+
+            int remainder = num5 % num6;
+            Console.WriteLine($"Remainder of num5 divided by num6: {remainder}");
+
+            Console.WriteLine($"Prefix Increment of num6: {++num6}");
+            Console.WriteLine($"Postfix Increment of num6: {num6++}");
+            Console.WriteLine($"Prefix Increment of num6: {--num6}");
+            Console.WriteLine($"Postfix Increment of num6: {num6--}");
+
+            num5 += 2;
+            Console.WriteLine($"num5 after += 2: {num5}");
+            num5 -= 3;
+            Console.WriteLine($"num5 after -= 3: {num5}");
+            num5 *= 4;
+            Console.WriteLine($"num5 after *= 4: {num5}");
+            num5 /= 5;
+            Console.WriteLine($"num5 after /= 5: {num5}");
+            num5 %= 2;
+            Console.WriteLine($"num5 after %= 2: {num5}");
+
+        }
+    }
+}
