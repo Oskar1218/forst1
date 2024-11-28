@@ -1,0 +1,35 @@
+namespace Logical_Error_uppgift_15
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+            {
+                try
+                {
+                    Console.WriteLine("Enter a number to divide 100 by: ");
+                    int divisor = Convert.ToInt32(Console.ReadLine()); 
+                    int result = 100 / divisor;  
+                    Console.WriteLine("Result: " + result);
+                }
+                catch (FormatException ex)
+                {
+                   
+                    Console.WriteLine("Error: Please enter a valid number. " + ex.Message);
+                }
+                catch (DivideByZeroException ex)
+                {
+                    Console.WriteLine("Error: You cannot divide by zero. " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An unexpected error occurred: " + ex.Message);
+                }
+                finally
+                {
+                    
+                    Console.WriteLine("Execution completed.");
+                }
+          }
+     }
+
+}
