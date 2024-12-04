@@ -1,0 +1,27 @@
+namespace Area_of_Circle_uppgift_20
+{
+    internal class Program
+    {
+        public class Circle
+        {
+            public double Radius { get; private set; }
+
+            public Circle(double radius)
+            {
+                Radius = radius;
+            }
+
+            public double CalculateArea()
+            {
+                return Math.PI * Radius * Radius;
+            }
+            static void Main(string[] args)
+            {
+                Circle circle = new Circle(1.5);
+
+                double area = circle.CalculateArea();
+                Console.WriteLine($"Area of the circle is: {area}");
+            }
+        }
+    }
+}
