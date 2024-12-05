@@ -1,0 +1,87 @@
+namespace Dictionary_uppgift_17
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<string, string> subject = new Dictionary<string, string>();
+            bool running = true;
+
+            while (running) 
+            {
+
+            Console.WriteLine("Menu");
+            Console.WriteLine("1. Add a new subject");
+            Console.WriteLine("2. Remove a subject");
+            Console.WriteLine("3. Show all");
+            Console.WriteLine("4. Exit");
+            Console.WriteLine("Choose the options on screen(1-4)");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Console.WriteLine("Create a new name of the new subject: ");
+                    string subject = Console.ReadLine();
+                    Console.WriteLine("Enter the Teachers name: ");
+                    string teacher = Console.ReadLine();
+
+                    if (!subjects.ContainsKey(subject))
+                    {
+                        subjects[subject] = teacher;
+                        Console.WriteLine($"Subject '{subject}' with the teacher '{teacher}' added successfully");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Subject '{subject}' already exists.");
+                    }
+                    break;
+
+                case "2":
+
+                    Console.Write("Enter the name of the subject to remove: ");
+                    string subjectToRemove = Console.ReadLine();
+
+                    if (subjects.ContainKey(subjectToRemove))
+                    {
+                        subjects.Remove(subjectToRemove);
+                        Console.WriteLine($"Subject '{subjectToRemove}' removed succesfully!");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Error: Subject '{subjectToRemove}' not found.");
+                    }
+                    break;
+
+                    case "3":
+
+                    if (subjects.Count > 0)
+                    {
+                        Console.WriteLine("\nSubjects and their their teachers:");
+                        foreach (var item in subjects)
+                        {
+                            Console.WriteLine($"{item.key}: {item.Value}");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No subjects in the dictionary.");
+                    }
+                    break;
+
+                case "4":
+                    Console.WriteLine("Exting the program.");
+                    running = false;
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option. Please choose between 1-4.");
+                    break;
+
+
+            }
+        }
+    }
+}
+
