@@ -1,0 +1,24 @@
+namespace TryParse_uppgift_23
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a number: ");
+            string mainInput = Console.ReadLine();
+            int mainResult;
+
+            if (customeParse(mainInput, out mainResult))
+            {
+                Console.WriteLine($"Conversion ´succeeded: {mainResult}");
+            }
+            else
+            {
+                Console.WriteLine("Input string was not in a correct format."); 
+            }
+            Console.ReadLine();
+           
+
+        }
+    }
+}
