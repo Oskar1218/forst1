@@ -1,0 +1,78 @@
+namespace Functions_uppgift_27
+{
+    using System;
+
+    public class MathOperations
+    {
+        public int Addition(int num1, int num2)
+        {
+            return num1 + num2;
+        }
+
+        public int Subtraction(int num1, int num2)
+        {
+            return num1 - num2;
+        }
+
+        public int Multiplication(int num1, int num2)
+        {
+            return num1 * num2;
+        }
+
+        public double Division(int num1, int num2)
+        {
+            try
+            {
+                if (num2 == 0)
+                {
+                    throw new DivideByZeroException("Cannot divide by zero.");
+                }
+                return (double)num1 / num2;
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return 0.0;
+            }
+        }
+
+        public double Power(int baseNum, int exponent)
+        {
+            return Math.Pow(baseNum, exponent);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            MathOperations mathOps = new MathOperations();
+
+            Console.Write("Enter the first number: ");
+            string firstInput = Console.ReadLine();
+            Console.Write("Enter the second number: ");
+            string secondInput = Console.ReadLine();
+
+            try
+            {
+                int num1 = int.Parse(firstInput);
+                int num2 = int.Parse(secondInput);
+
+                Console.WriteLine("\nResults:");
+                Console.WriteLine($"Addition Result: {num1} + {num2} = {mathOps.Addition(num1, num2)}");
+                Console.WriteLine($"Subtraction Result: {num1} - {num2} = {mathOps.Subtraction(num1, num2)}");
+                Console.WriteLine($"Multiplication Result: {num1} * {num2} = {mathOps.Multiplication(num1, num2)}");
+                Console.WriteLine($"Division Result: {num1} / {num2} = {mathOps.Division(num1, num2)}");
+                Console.WriteLine($"Power Result: {num1}^{num2} = {mathOps.Power(num1, num2)}");
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Error: Invalid input. Please enter valid integers.");
+            }
+
+            Console.WriteLine("\nPress any key to exit.");
+            Console.ReadKey();
+        }
+    }
+
+}
