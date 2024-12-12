@@ -1,0 +1,61 @@
+namespace Lists___Collection_uppgift_25
+{
+ 
+      using System;
+      using System.Collections.Generic;
+      using System.Linq;
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                List<string> itemList = new List<string> { "Laptop", "Smartphone", "Tablet", "Headphones" };
+
+                Dictionary<string, (int stock, double price)> inventory = new Dictionary<string, (int, double)>
+        {
+            { "Laptop", (10, 1000.00) },
+            { "Smartphone", (20, 500.00) },
+            { "Tablet", (15, 300.00) },
+            { "Headphones", (30, 150.00) }
+        };
+
+            itemList.Add("Smartwatch");
+            inventory.Add("Smartwatch", (50, 200.00));
+
+            Console.WriteLine("Added 'Smartwatch' to inventory.");
+
+                itemList.Remove("Tablet");
+                inventory.Remove("Tablet");
+
+            Console.WriteLine("Removed 'Tablet' from inventory.");
+
+            if (inventory.ContainsKey("Laptop"))
+            {
+                inventory["Laptop"] = (inventory["Laptop"].stock + 5, inventory["Laptop"].price);
+            }
+
+            Console.WriteLine("Updated stock of 'Laptop' to " + inventory["Laptop"].stock);
+
+            Console.WriteLine("\nInventory:");
+            foreach (var item in itemList)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("\nStock and Prices:");
+            foreach (var entry in inventory)
+            {
+                 Console.WriteLine($"{entry.Key}: Stock = {entry.Value.stock}, Price = {entry.Value.price:C}");
+            }
+
+                var mostExpensiveItem = inventory.OrderByDescending(i => i.Value.price).First();
+                Console.WriteLine($"\nMost Expensive Item: {mostExpensiveItem.Key} with Price = {mostExpensiveItem.Value.price:C}");
+
+                double totalValue = inventory.Sum(i => i.Value.stock * i.Value.price);
+                Console.WriteLine($"\nTotal Inventory Value: {totalValue:C}");
+
+                Console.ReadKey();
+            }
+        }
+
+    }
