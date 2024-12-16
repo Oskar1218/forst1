@@ -1,0 +1,73 @@
+namespace ClassField_uppgift_24
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        { }
+        class Product
+        {
+            private string name;
+            private double price;
+            private int stock;
+
+            public Product(string name, double price, int stock)
+            {
+                this.name = name;
+                this.price = price;
+                this.stock = stock;
+            }
+
+            public void SetName(string name)
+            {
+                this.name = name;
+            }
+
+            public string GetName()
+            {
+                return name;
+            }
+
+            public void SetPrice(double price)
+            {
+                this.price = price;
+            }
+            public double GetPrice()
+            {
+                return price;
+            }
+            public void SetStock(int stock)
+            {
+                this.stock = stock;
+            }
+
+            public int GetStock()
+            {
+                return stock;
+            }
+            public string GetDetails()
+            {
+                return $"Name: {name}, Price: {price}, $\nStock: {stock}";
+
+                static void Main(string[] args)
+                {
+                    Product product1 = new Product("Laptop", 999.99, 10);
+
+                    Console.WriteLine(product1.GetDetails());
+
+                    product1.SetName("Gaming Laptop");
+                    product1.SetPrice(1299.99);
+                    product1.SetStock(5);
+
+                    Console.WriteLine(product1.GetDetails());
+
+                    Console.WriteLine($"Product Name: {product1.GetName()}");
+                    Console.WriteLine($"Product Name: {product1.GetPrice()}");
+                    Console.WriteLine($"Product Name: {product1.GetStock()}");
+
+
+
+                }
+            }
+        }
+    }
+}
