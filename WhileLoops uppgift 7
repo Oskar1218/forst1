@@ -1,0 +1,47 @@
+namespace WhileLoops
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the first number: ");
+            string numberAInput = Console.ReadLine();  
+            int numberA = Convert.ToInt32(numberAInput);
+
+            Console.WriteLine("Enter the second number: ");
+            string numberBInput = Console.ReadLine();
+            int numberB = Convert.ToInt32(numberAInput);
+            Console.WriteLine();
+
+            int answer = numberA * numberB;
+            int actualAnswer = 0;
+        
+            Console.Write("Value of " + numberA + " x " + numberB + ": ");
+            Console.WriteLine();
+
+            Console.WriteLine("Well done!");
+            Console.ReadLine();
+          
+            while (answer != actualAnswer)
+            do
+            {
+                Console.Write("Enter your answer: ");
+                string answerInput = Console.ReadLine();
+                actualAnswer = Convert.ToInt32(answerInput);
+
+                if (answer != actualAnswer)
+                {
+                    Console.WriteLine("Close but it was wrong!");
+                }
+            } while (answer != actualAnswer);
+
+            Console.WriteLine("Well done!");
+            Console.ReadLine();
+
+
+
+
+            Console.ReadLine();
+        }
+    }
+}
